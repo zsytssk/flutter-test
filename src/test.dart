@@ -1,20 +1,5 @@
-abstract class Animal {
-  String name;
-  Animal(this.name);
-}
+import 'dart:math';
 
-class Cat extends Animal {
-  String breed;
-
-  Cat(int i)
-      : breed = breedFromCode(i),
-        super(randomName());
-
-  static String breedFromCode(int i) {
-    // ...
-  }
-
-  static String randomName() {
-    // ...
-  }
+void main() {
+  print(pi);
 }
