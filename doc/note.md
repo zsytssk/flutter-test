@@ -21,6 +21,7 @@ https://dart.dev/guides/language/language
 
   - 好像现在没有 https://github.com/flutter/flutter/issues/60448
   - https://medium.com/flutter-community/dart-what-are-mixins-3a72344011f3
+  - keyword dart lang multiple mixin has same method or variable name
 
 - @ques @override 和普通调用 super.method 有什么区别
 
