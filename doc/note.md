@@ -17,6 +17,11 @@ https://dart.dev/guides/language/language
 
 - @todo `async async*`
 
+- @ques `class A with B, C` B + C 有相同名字的方法 怎么分别调用
+
+  - 好像现在没有 https://github.com/flutter/flutter/issues/60448
+  - https://medium.com/flutter-community/dart-what-are-mixins-3a72344011f3
+
 - @ques @override 和普通调用 super.method 有什么区别
 
 - `DateTime.now().difference(launchDate).inDays ~/ 365;`
