@@ -1,49 +1,17 @@
-class Spacecraft {
-  String name;
-  DateTime launchDate;
-  Spacecraft(this.name, this.launchDate) {}
-  Spacecraft.unlaunched(String name) : this(name, null);
-  int get launchYear => this.launchDate.year;
-  void describe() {
-    print('Spacecraft $name');
-    if (launchDate != null) {
-      int year = DateTime.now().difference(launchDate).inDays ~/ 365;
-      print('Launched: $launchYear ($year year ago)');
-    } else {
-      print('unluanched');
-    }
-  }
-}
+import 'dart:math';
 
-class Piloted {
-  int astronauts = 1;
-  void describeCrew() {
-    print('Number of astronauts: $astronauts');
-  }
-}
+class Point {
+  int x, y;
+  Point(this.x, this.y);
 
-class Piloted2 {
-  int astronauts2 = 2;
-  void describeCrew() {
-    print('Number of astronauts2: $astronauts2');
-  }
-}
-
-class Orbiter extends Spacecraft with Piloted, Piloted2 {
-  double altitude;
-  Orbiter(String name, DateTime launchDate, double altitude)
-      : this.altitude = altitude,
-        super(name, launchDate) {
-    print('Orbiter');
-  }
-  void describe() {
-    print('Orbiter altitude: $altitude');
-    super.describeCrew();
-    super.describe();
+  distanceTo(Point other_p) {
+    return sqrt(pow(other_p.x - x, 2) + pow(other_p.y - y, 2));
   }
 }
 
 void main() {
-  var voyager = Orbiter('Voyager I', DateTime(1977, 9, 5), 12.4);
-  voyager.describe();
+  var a = Point(1, 1);
+  var b = Point(1, 1);
+
+  print(a.runtimeType);
 }
