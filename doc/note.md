@@ -1,24 +1,40 @@
-- https://dart.dev/guides/language/language-tour#constructors
+https://flutter.dev/docs
 
-## 2020-09-17 15:45:58
+https://www.youtube.com/watch?v=TSIhiZ5jRB0&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=4
+
+## 2020-09-25 09:39:43
+
+- @ques dart 原声的 stream 怎么用
+
+## 2020-09-23 14:13:01
+
+- android 下载
+- xcode 下载
+
+### end
+
+- https://dart.dev/guides/libraries/create-library-packages
+
+- @ques `_cache.putIfAbsent(name, () => Logger._internal(name));` 这怎么理解
+- @ques export part library
+- @ques mixins
+- https://dart.dev/guides/language/language-tour#generators
+
+- @ques dart write a future resolve reject
 
 - @ques ... Point.withAssert(this.x, this.y) : assert(x >= 0) {
   print('In Point.withAssert(): ($x, $y)');
   }
-
 - @ques 如何获取一个的类型
-
 - @ques The constructor being called isn't a const constructor.
-
-- @ques dart
 
 - @ques dart iterable to set
 
--
+- @ques 能不能用 optional mark
 
 - @ques dart params;
 
-- @ques 能不能用 optional mark
+## 2020-09-17 15:45:58
 
 - @ques Symbols 能干什么
 
@@ -37,9 +53,9 @@ sb.write('foo')
 - @ques assert 到底是干什么的
   - debug 模式会报错
 
-## 2020-09-17 09:30:23
-
 https://www.youtube.com/watch?v=FLQ-Vhw1NYQ&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=4&t=982s
+
+## 2020-09-17 09:30:23
 
 - @ques Isolates
 
@@ -62,14 +78,10 @@ Iterable<int> naturalsTo(int n) sync* {
 - https://dart.dev/samples
   - async mixin
 - @ques final keyword
-
-## 2020-09-17 09:28:28
-
 - @ques list expand
+- @ques override 没什么用
 
 ## 2020-09-09 10:03:03
-
-- @ques override 没什么用
 
 - dart tutorial for js
   dart 高级的 js
@@ -97,6 +109,8 @@ Iterable<int> naturalsTo(int n) sync* {
 - @ques dart 所有的类型
 
 ## 2020-09-02 09:58:34
+
+### end
 
 - @ques 如何在本地运行 dart 语言
 
