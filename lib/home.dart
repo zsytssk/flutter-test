@@ -13,7 +13,6 @@ class MyHomePage extends StatelessWidget {
             tween: Tween(begin: 0.0, end: 1.0),
             duration: Duration(seconds: 4),
             builder: (context, value, child) {
-              print(value);
               int percentage = (value * 100).ceil();
               return Container(
                   width: size,
@@ -36,9 +35,10 @@ class MyHomePage extends StatelessWidget {
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
-                                    image: Image.asset(
-                                            "../assets/images/radial_scale.png")
-                                        .image)),
+                                  image: Image.asset(
+                                          "assets/images/radial_scale.png")
+                                      .image,
+                                )),
                           )),
                       Center(
                         child: Container(
@@ -48,7 +48,7 @@ class MyHomePage extends StatelessWidget {
                                 shape: BoxShape.circle, color: Colors.white),
                             child: Center(
                                 child: Text("$percentage",
-                                    style: TextStyle(fontSize: 40)))),
+                                    style: TextStyle(fontSize: 38)))),
                       )
                     ],
                   ));
