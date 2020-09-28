@@ -1,12 +1,32 @@
 https://flutter.dev/docs
+https://www.youtube.com/watch?v=TiH0HYBFMMI
 
 https://www.youtube.com/watch?v=TSIhiZ5jRB0&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=4
 
+## 2020-09-27 09:31:11
+
+- @ques
+  - scaffold safeArea AppBar Text Container
+  - center
+
+dart
+
 ## 2020-09-25 09:39:43
 
-- @ques dart 原声的 stream 怎么用
+- @ques 怎么显示 dialog
+  - 下面 textAlign 怎么没有用
+
+```dart
+appBar: AppBar(
+title: Text('Welcome to Flutter',
+    textAlign: TextAlign.justify,
+    style: TextStyle(color: Colors.red))),
+
+```
 
 ## 2020-09-23 14:13:01
+
+- @ques dart 原声的 stream 怎么用
 
 - android 下载
 - xcode 下载
