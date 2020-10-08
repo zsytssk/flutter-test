@@ -1,7 +1,11 @@
 https://flutter.dev/docs
 https://www.youtube.com/watch?v=TiH0HYBFMMI
 
-https://www.youtube.com/watch?v=TSIhiZ5jRB0&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=4
+https://www.youtube.com/watch?v=p5dkB3Mrxdo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=16
+
+## 2020-10-08 09:42:25
+
+- @ques flutter row wrap
 
 ## 2020-09-27 09:31:11
 
