@@ -7,7 +7,7 @@ class MyHomePage extends StatelessWidget {
       child: Scaffold(
           backgroundColor: Colors.grey[900],
           appBar: AppBar(
-            title: Text("hi"),
+            title: Text("hello"),
             centerTitle: true,
             backgroundColor: Colors.grey[850],
             elevation: 0.0,
