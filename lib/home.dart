@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import './fileList.dart';
 
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: Colors.grey[900],
           appBar: AppBar(
             title: Text("hello"),
@@ -54,7 +56,9 @@ class MyHomePage extends StatelessWidget {
                           color: Colors.grey[400],
                           fontSize: 18.0,
                           letterSpacing: 1.0)),
-                ])
+                ]),
+                SizedBox(height: 30),
+                FileList(),
               ],
             ),
           )),
