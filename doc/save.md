@@ -137,3 +137,30 @@ var a = [
 DateTime.now().millisecondsSinceEpoch
 
 ```
+
+## class print
+
+```dart
+class A {
+  int b = 1;
+  int c = 1;
+  String toString() {
+    String s = "b=$b;c=$c;";
+    return s;
+  }
+}
+```
+
+## multi dot
+
+```dart
+var a = A()
+    ..b = 1
+    ..c = 2;
+```
+
+## optional chain
+
+```dart
+b ??= value;
+```

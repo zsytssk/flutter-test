@@ -1,7 +1,34 @@
 https://flutter.dev/docs
-https://www.youtube.com/watch?v=TiH0HYBFMMI
 
 https://www.youtube.com/watch?v=TSIhiZ5jRB0&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=4
+
+## 2020-09-29 09:48:54
+
+- @ques 打包之后的大小
+
+  - 如何发布 flutter 项目
+
+- @ques search flutter syntax is old
+
+  - 只有 MaterialApp 吗
+
+- @ques 图片旋转
+
+- @ques 怎么获取当前元素
+
+- @ques goTest
+
+- @ques row 换行
+
+### end
+
+- @ques center 偏移怎么处理
+
+  - margin
+
+- @ques StatefulWidget 的 state 能不能获取 自己
+
+  - StatefulWidget (this.widget)
 
 ## 2020-09-27 09:31:11
 
