@@ -30,15 +30,6 @@ class _FileListState extends State<FileList> {
       );
     }
 
-    final children = <Widget>[];
-    for (var i = 0; i < fileList.length; i++) {
-      String path = fileList[i].path;
-      children.add(Container(
-        color: Colors.white,
-        margin: EdgeInsets.only(left: 3, right: 3, bottom: 5),
-        child: Text('$path', style: TextStyle(color: Colors.black)),
-      ));
-    }
     return Column(
       children: [
         Align(
@@ -49,7 +40,14 @@ class _FileListState extends State<FileList> {
         Align(
           alignment: Alignment.centerLeft,
           child: Wrap(
-            children: children,
+            children: fileList
+                .map((e) => Container(
+                      color: Colors.white,
+                      margin: EdgeInsets.only(left: 3, right: 3, bottom: 5),
+                      child: Text('${e.path}',
+                          style: TextStyle(color: Colors.black)),
+                    ))
+                .toList(),
           ),
         ),
       ],
