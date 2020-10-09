@@ -1,14 +1,8 @@
+import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:my_app/home.dart';
 
-main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    print(context);
-    return MaterialApp(
-      home: MyHomePage(),
-    );
-  }
+main() async {
+  runApp(MaterialApp(home: MyHomePage()));
 }
