@@ -166,3 +166,19 @@ var a = A()
 ```dart
 b ??= value;
 ```
+
+## 可选参数
+
+```dart
+copyInto(Image dst, Image src,
+    {int dstX,
+    int dstY,
+    int srcX,
+    int srcY,
+    int srcW,
+    int srcH,
+    bool blend = true})
+
+
+copyInto(xxx, xxx, dstX: 100, dstY: 100);
+```

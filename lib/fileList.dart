@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import './utils.dart';
 
 class FileList extends StatefulWidget {
   @override
@@ -9,43 +10,63 @@ class FileList extends StatefulWidget {
 }
 
 class _FileListState extends State<FileList> {
-  List<FileSystemEntity> fileList = [];
-  _FileListState() {
-    dirContents('./').then((value) => {
-          setState(() {
-            fileList = value;
-          })
-        });
-  }
-  @override
-  Widget build(BuildContext context) {
-    if (fileList.length == 0) {
-      return Column(
-        children: [
-          Text("Files:",
-              style: TextStyle(color: Colors.grey, letterSpacing: 2.0)),
-          SizedBox(height: 10),
-          Text('empty', style: TextStyle(color: Colors.grey[450])),
-        ],
-      );
+  List<String> fileList = [];
+  onUpload() async {
+    final file = pickFiles();
+    if (file == null || fileList.contains(file)) {
+      return;
     }
 
+    fileList.add(file);
+    setState(() => {
+          fileList,
+        });
+    print(file);
+  }
+
+  onCombine() {
+    combine(fileList);
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       children: [
         Align(
             alignment: Alignment.centerLeft,
-            child: Text("Files",
-                style: TextStyle(color: Colors.grey, letterSpacing: 2.0))),
+            child: Row(
+              children: [
+                Text("Files",
+                    style: TextStyle(color: Colors.grey, letterSpacing: 2.0)),
+                SizedBox(width: 20),
+                RaisedButton(
+                  onPressed: onUpload,
+                  child: Text('upload file'),
+                ),
+                SizedBox(width: 20),
+                fileList.length == 0
+                    ? SizedBox(width: 20)
+                    : RaisedButton(
+                        onPressed: onCombine,
+                        child: Text('combine'),
+                      ),
+              ],
+            )),
         SizedBox(height: 10),
         Align(
           alignment: Alignment.centerLeft,
           child: Wrap(
             children: fileList
-                .map((e) => Container(
-                      color: Colors.white,
-                      margin: EdgeInsets.only(left: 3, right: 3, bottom: 5),
-                      child: Text('${e.path}',
-                          style: TextStyle(color: Colors.black)),
+                .map((_file) => Column(
+                      children: [
+                        Container(
+                          color: Colors.white,
+                          margin: EdgeInsets.only(left: 3, right: 3, bottom: 5),
+                          child: Text('$_file',
+                              style: TextStyle(color: Colors.black)),
+                        ),
+                        Image.file(File(_file), width: 100, height: 100),
+                      ],
                     ))
                 .toList(),
           ),
