@@ -56,18 +56,11 @@ class _FileListState extends State<FileList> {
         Align(
           alignment: Alignment.centerLeft,
           child: Wrap(
+            spacing: 10.0,
             children: fileList
-                .map((_file) => Column(
-                      children: [
-                        Container(
-                          color: Colors.white,
-                          margin: EdgeInsets.only(left: 3, right: 3, bottom: 5),
-                          child: Text('$_file',
-                              style: TextStyle(color: Colors.black)),
-                        ),
-                        Image.file(File(_file), width: 100, height: 100),
-                      ],
-                    ))
+                .map(
+                  (_file) => Image.file(File(_file), width: 100, height: 100),
+                )
                 .toList(),
           ),
         ),

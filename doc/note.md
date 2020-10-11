@@ -4,9 +4,14 @@ https://www.youtube.com/watch?v=QgQJJ0y0A6w&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 ## 2020-10-11 09:53:19
 
+- @ques 换 app 的 icon
 - @ques 如何 picker 多个文件
 
 - @ques 如何选择文件夹 保存文件
+
+### end
+
+怎么打包成 exe
 
 ## 2020-10-08 09:42:25
 
