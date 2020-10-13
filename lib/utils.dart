@@ -1,16 +1,10 @@
+// import 'package:file_picker/file_picker.dart';
 import 'package:file_chooser/file_chooser.dart';
 import 'package:image/image.dart';
 import 'dart:io';
 
-pickFiles() async {
-  // return await showOpenPanel(allowedFileTypes: [
-  //   FileTypeFilterGroup(label: 'txt', fileExtensions: ['png'])
-  // ]).catchError((err) => {print(err)});
-  try {
-    showSavePanel();
-  } catch (e) {
-    print(e);
-  }
+pickFiles() {
+  return showOpenPanel();
 }
 
 combine(List<String> fileList) {
