@@ -12,7 +12,7 @@ class FileList extends StatefulWidget {
 class _FileListState extends State<FileList> {
   List<String> fileList = [];
   onUpload() async {
-    final file = pickFiles();
+    final file = await pickFiles();
     if (file == null || fileList.contains(file)) {
       return;
     }
