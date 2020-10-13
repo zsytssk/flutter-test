@@ -12,16 +12,17 @@ class FileList extends StatefulWidget {
 class _FileListState extends State<FileList> {
   List<String> fileList = [];
   onUpload() async {
-    final file = pickFiles();
-    if (file == null || fileList.contains(file)) {
-      return;
-    }
+    pickFiles();
+    // final file = await pickFiles();
+    // if (file == null || fileList.contains(file)) {
+    //   return;
+    // }
 
-    fileList.add(file);
-    setState(() => {
-          fileList,
-        });
-    print(file);
+    // fileList.add(file);
+    // setState(() => {
+    //       fileList,
+    //     });
+    // print(file);
   }
 
   onCombine() {

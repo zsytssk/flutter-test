@@ -1,23 +1,15 @@
-// import 'package:file_picker/file_picker.dart';
-import 'package:filepicker_windows/filepicker_windows.dart';
+import 'package:file_chooser/file_chooser.dart';
 import 'package:image/image.dart';
 import 'dart:io';
 
-pickFiles() {
-  if (Platform.isWindows) {
-    final file_picker = OpenFilePicker()
-      ..filterSpecification = {
-        'Image (*.png; *.jpg)': '*.png;*.jpg',
-      }
-      ..defaultFilterIndex = 0
-      ..defaultExtension = '*'
-      ..title = 'Select a document';
-
-    final file = file_picker.getFile();
-    if (file == null) {
-      return file;
-    }
-    return file.path;
+pickFiles() async {
+  // return await showOpenPanel(allowedFileTypes: [
+  //   FileTypeFilterGroup(label: 'txt', fileExtensions: ['png'])
+  // ]).catchError((err) => {print(err)});
+  try {
+    showSavePanel();
+  } catch (e) {
+    print(e);
   }
 }
 
