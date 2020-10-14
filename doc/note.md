@@ -8,6 +8,8 @@ https://www.youtube.com/watch?v=9lCQhwo8WT4
 
   - file_chooser
 
+- @ques 怎么修改文件名
+
 - @ques 换 app 的 icon
   - app_icon.ico
 - @ques 如何 picker 多个文件
