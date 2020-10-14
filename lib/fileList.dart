@@ -17,11 +17,11 @@ class _FileListState extends State<FileList> {
       return;
     }
 
-    fileList.add(file);
-    setState(() => {
-          fileList,
-        });
-    print(file);
+    // fileList.add(file);
+    // setState(() => {
+    //       fileList,
+    //     });
+    // print(file);
   }
 
   onCombine() {
