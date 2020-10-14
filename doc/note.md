@@ -2,7 +2,11 @@ https://flutter.dev/docs
 
 https://www.youtube.com/watch?v=9lCQhwo8WT4
 
+https://medium.com/flutter-community/how-to-call-a-rust-function-from-dart-using-ffi-f48f3ea3af2c
+
 ## 2020-10-11 09:53:19
+
+- @todo dart rect pack...
 
 - @qeus https://github.com/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
 
