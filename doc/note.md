@@ -1,6 +1,6 @@
 https://flutter.dev/docs
 
-https://www.youtube.com/watch?v=QgQJJ0y0A6w&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=18
+https://www.youtube.com/watch?v=9lCQhwo8WT4
 
 ## 2020-10-11 09:53:19
 

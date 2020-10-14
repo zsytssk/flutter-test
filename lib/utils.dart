@@ -4,7 +4,15 @@ import 'package:image/image.dart';
 import 'dart:io';
 
 pickFiles() {
-  return showOpenPanel();
+  return showOpenPanel(
+    allowsMultipleSelection: true,
+    allowedFileTypes: [
+      FileTypeFilterGroup(label: 'image', fileExtensions: ['png', 'jpg']),
+    ],
+    confirmButtonText: 'haha',
+  ).then((val) {
+    return val.paths;
+  });
 }
 
 combine(List<String> fileList) {
@@ -14,6 +22,5 @@ combine(List<String> fileList) {
     copyInto(mergedImage, img, dstX: 100 * i, dstY: 100 * i);
   }
 
-  // Save the thumbnail as a PNG.
-  File('thumbnail.png')..writeAsBytesSync(encodePng(mergedImage));
+  File('./thumbnail.png')..writeAsBytesSync(encodePng(mergedImage));
 }
