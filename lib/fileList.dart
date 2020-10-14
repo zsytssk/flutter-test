@@ -11,6 +11,7 @@ class FileList extends StatefulWidget {
 
 class _FileListState extends State<FileList> {
   List<String> fileList = [];
+  ScrollController _scrollController = new ScrollController();
   onUpload() async {
     final files = await pickOpenFiles();
     print(files);
@@ -31,40 +32,42 @@ class _FileListState extends State<FileList> {
 
   @override
   Widget build(BuildContext context) {
+    final allHeight = MediaQuery.of(context).size.height;
+    final bottomBarHeight = 60.0;
     return Column(
       children: [
-        Align(
-            alignment: Alignment.centerLeft,
-            child: Row(
-              children: [
-                Text("Files",
-                    style: TextStyle(color: Colors.grey, letterSpacing: 2.0)),
-                SizedBox(width: 20),
-                RaisedButton(
-                  onPressed: onUpload,
-                  child: Text('upload file'),
-                ),
-                SizedBox(width: 20),
-                fileList.length == 0
-                    ? SizedBox(width: 20)
-                    : RaisedButton(
-                        onPressed: onCombine,
-                        child: Text('combine'),
-                      ),
-              ],
-            )),
-        SizedBox(height: 10),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Wrap(
-            spacing: 10.0,
-            children: fileList
-                .map(
-                  (_file) => Image.file(File(_file), width: 100, height: 100),
-                )
-                .toList(),
-          ),
+        Container(
+          height: allHeight - bottomBarHeight,
+          child: ListView.builder(
+              controller: _scrollController,
+              itemCount: fileList.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Image.file(File(fileList[index]),
+                    width: 100, height: 100);
+              }),
         ),
+        Container(
+          height: bottomBarHeight,
+          color: Colors.white,
+          child: Align(
+              alignment: Alignment.center,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RaisedButton(
+                    onPressed: onUpload,
+                    child: Text('upload file'),
+                  ),
+                  SizedBox(width: 20),
+                  fileList.length == 0
+                      ? SizedBox(width: 20)
+                      : RaisedButton(
+                          onPressed: onCombine,
+                          child: Text('combine'),
+                        ),
+                ],
+              )),
+        )
       ],
     );
   }
