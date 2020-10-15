@@ -12,9 +12,13 @@ class FileList extends StatefulWidget {
 class _FileListState extends State<FileList> {
   List<String> fileList = [];
   ScrollController _scrollController = new ScrollController();
+  @override
+  initState() {
+    super.initState();
+  }
+
   onUpload() async {
     final files = await pickOpenFiles();
-    print(files);
     if (files.length > 0) {
       for (final file in files) {
         fileList.add(file);
