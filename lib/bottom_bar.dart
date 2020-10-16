@@ -44,6 +44,14 @@ class BottomBar extends StatelessWidget {
                         InputDecoration(border: InputBorder.none, hintText: ''),
                   ),
                   Text('删除全部'),
+                ]),
+                Column(children: [
+                  Text('上传图片'),
+                  TextField(
+                    decoration:
+                        InputDecoration(border: InputBorder.none, hintText: ''),
+                  ),
+                  Text('生成字体'),
                 ])
               ],
             )),

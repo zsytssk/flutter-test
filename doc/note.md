@@ -4,6 +4,12 @@ https://www.youtube.com/watch?v=jAxNZYX7mHM&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 - @ques 如何获取上级的 state
 
+  - 不需要直接传进去
+
+- @ques 直接 icon + 文字
+
+- @ques 如何获取上级的 state
+
 - @ques Flutter: how to get DPI of device screen
 
 - @ques 背景色 + border-radius
