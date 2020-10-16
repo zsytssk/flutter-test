@@ -13,3 +13,9 @@
     - ImageLoaderUtils
     - getImageFromWidget
     - saveImageByUIImage
+
+https://medium.com/flutter-community/how-to-call-a-rust-function-from-dart-using-ffi-f48f3ea3af2c
+
+https://dev.to/sunshine-chain/dart-meets-rust-a-match-made-in-heaven-9f5
+
+https://flutter.dev/docs

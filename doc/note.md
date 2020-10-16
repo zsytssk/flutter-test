@@ -1,12 +1,14 @@
-https://flutter.dev/docs
-
-https://www.youtube.com/watch?v=9lCQhwo8WT4
-
-https://medium.com/flutter-community/how-to-call-a-rust-function-from-dart-using-ffi-f48f3ea3af2c
-
-https://dev.to/sunshine-chain/dart-meets-rust-a-match-made-in-heaven-9f5
+https://www.youtube.com/watch?v=jAxNZYX7mHM&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=20
 
 ## 2020-10-11 09:53:19
+
+- @ques 如何获取上级的 state
+
+- @ques Flutter: how to get DPI of device screen
+
+- @ques 背景色 + border-radius
+
+- @todo 预览
 
 - @todo dart rect pack...
 

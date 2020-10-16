@@ -1,5 +1,6 @@
 import 'package:file_chooser/file_chooser.dart';
 import 'package:image/image.dart';
+import 'dart:async';
 import 'dart:io';
 
 pickOpenFiles() {
@@ -32,4 +33,20 @@ combine(List<String> fileList) async {
   if (filenames != null) {
     File(filenames[0])..writeAsBytesSync(encodePng(mergedImage));
   }
+}
+
+Future<List<FileSystemEntity>> dirContents(String dirStr) async {
+  var files = <FileSystemEntity>[];
+  final dir = new Directory(dirStr);
+  final exist = await dir.exists();
+
+  if (!exist) {
+    return files;
+  }
+  var completer = Completer<List<FileSystemEntity>>();
+  var lister = dir.list(recursive: false);
+  lister.listen((file) => files.add(file),
+      // should also register onError
+      onDone: () => completer.complete(files));
+  return completer.future;
 }
