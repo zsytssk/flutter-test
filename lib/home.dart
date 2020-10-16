@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: FileList(fileList: model.fileList)),
               SizedBox(height: space),
               Container(
-                child: BottomBar(),
+                child: BottomBar(model: model),
                 height: bottomHeight,
               )
             ]),
