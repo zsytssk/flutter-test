@@ -1,12 +1,20 @@
-https://flutter.dev/docs
-
-https://www.youtube.com/watch?v=9lCQhwo8WT4
-
-https://medium.com/flutter-community/how-to-call-a-rust-function-from-dart-using-ffi-f48f3ea3af2c
-
-https://dev.to/sunshine-chain/dart-meets-rust-a-match-made-in-heaven-9f5
+https://www.youtube.com/watch?v=jAxNZYX7mHM&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=20
 
 ## 2020-10-11 09:53:19
+
+- @ques 如何获取上级的 state
+
+  - 不需要直接传进去
+
+- @ques 直接 icon + 文字
+
+- @ques 如何获取上级的 state
+
+- @ques Flutter: how to get DPI of device screen
+
+- @ques 背景色 + border-radius
+
+- @todo 预览
 
 - @todo dart rect pack...
 
@@ -23,9 +31,10 @@ https://dev.to/sunshine-chain/dart-meets-rust-a-match-made-in-heaven-9f5
 - @ques 如何选择文件夹 保存文件
 
 - @ques go-flutter 是什么东西
-- @ques 怎么排列矩形
 
-- @ques TeamHypersomnia [rectpack2D](https://github.com/TeamHypersomnia/rectpack2D/issues)
+- @ques 怎么排列矩形
+  - @ques [potpack](https://github.com/mapbox/potpack)
+  - [bin-pack](https://github.com/bryanburgers/bin-pack)
 
 ### end
 

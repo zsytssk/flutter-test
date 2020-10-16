@@ -68,6 +68,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "dotted_border",
+      "rootUri": "file:///D:/zsytssk/tool/flutter/.pub-cache/hosted/pub.flutter-io.cn/dotted_border-1.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "fake_async",
       "rootUri": "file:///D:/zsytssk/tool/flutter/.pub-cache/hosted/pub.flutter-io.cn/fake_async-1.2.0-nullsafety.1",
       "packageUri": "lib/",
@@ -114,6 +120,18 @@
       "rootUri": "file:///D:/zsytssk/tool/flutter/.pub-cache/hosted/pub.flutter-io.cn/path-1.8.0-nullsafety.1",
       "packageUri": "lib/",
       "languageVersion": "2.10"
+    },
+    {
+      "name": "path_drawing",
+      "rootUri": "file:///D:/zsytssk/tool/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_drawing-0.4.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "1.19"
+    },
+    {
+      "name": "path_parsing",
+      "rootUri": "file:///D:/zsytssk/tool/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_parsing-0.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "1.19"
     },
     {
       "name": "petitparser",
@@ -188,7 +206,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-10-16T15:02:07.578660Z",
+  "generated": "2020-10-16T15:02:17.851699Z",
   "generator": "pub",
   "generatorVersion": "2.11.0-161.0.dev"
 }

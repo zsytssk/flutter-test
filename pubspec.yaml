@@ -33,6 +33,7 @@ dependencies:
       path: plugins/file_chooser
       ref: master
   image: ^2.1.18
+  dotted_border: ^1.0.6
 
 dev_dependencies:
   flutter_test:
