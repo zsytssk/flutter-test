@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/bottom_bar.dart';
+import 'package:my_app/bottom_bar/bottom_bar.dart';
 import 'package:my_app/utils.dart';
 import 'file_list.dart';
 import './model.dart';

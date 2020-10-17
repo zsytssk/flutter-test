@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/bottom_bar/button_with_icon.dart';
 import 'package:my_app/components/radio_label.dart';
 import 'package:my_app/model.dart';
 
@@ -90,40 +91,15 @@ class BottomBar extends StatelessWidget {
                                 flex: 1,
                                 child: SizedBox(
                                     height: 40,
-                                    child: RaisedButton(
-                                        color: Colors.blue,
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(Icons.add,
-                                                color: Colors.white),
-                                            SizedBox(width: 8),
-                                            Text("上传图片",
-                                                style: TextStyle(
-                                                    color: Colors.white))
-                                          ],
-                                        ),
-                                        onPressed: () {}))),
+                                    child: ButtonWithIcon(
+                                        icon: Icons.add, label: '上传图片'))),
                             SizedBox(width: 20),
                             Expanded(
                                 flex: 1,
                                 child: SizedBox(
                                     height: 40,
-                                    child: RaisedButton(
-                                        color: Colors.blue,
-                                        child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Icon(Icons.publish,
-                                                  color: Colors.white),
-                                              SizedBox(width: 8),
-                                              Text("生成字体",
-                                                  style: TextStyle(
-                                                      color: Colors.white)),
-                                            ]),
-                                        onPressed: () {}))),
+                                    child: ButtonWithIcon(
+                                        icon: Icons.publish, label: '生成字体'))),
                           ]))
                 ],
               )),
