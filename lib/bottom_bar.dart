@@ -15,10 +15,22 @@ class BottomBar extends StatelessWidget {
       children: [
         Container(
             margin: EdgeInsets.only(left: 10),
-            width: 200,
+            width: 120,
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text('字号：--', style: textStyle),
+              Row(
+                children: [
+                  Text('字号：', style: textStyle),
+                  Container(
+                    width: 50,
+                    height: 30,
+                    child: TextField(
+                      decoration: InputDecoration(
+                          border: InputBorder.none, hintText: '--'),
+                    ),
+                  )
+                ],
+              ),
               Text('字体类型', style: textStyle),
               Container(
                 child: RadioLabel(
@@ -43,29 +55,79 @@ class BottomBar extends StatelessWidget {
                 ),
               ),
             ])),
-        // Container(
-        //     color: Colors.blue,
-        //     width: 412,
-        //     child: Row(
-        //       children: [
-        //         Column(children: [
-        //           Text('间距'),
-        //           TextField(
-        //             decoration:
-        //                 InputDecoration(border: InputBorder.none, hintText: ''),
-        //           ),
-        //           Text('删除全部'),
-        //         ]),
-        //         Column(children: [
-        //           Text('上传图片'),
-        //           TextField(
-        //             decoration:
-        //                 InputDecoration(border: InputBorder.none, hintText: ''),
-        //           ),
-        //           Text('生成字体'),
-        //         ])
-        //       ],
-        //     )),
+        Expanded(
+          flex: 1,
+          child: Container(
+              width: 310,
+              margin: EdgeInsets.only(right: 10),
+              child: Column(
+                children: [
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Text('间距'),
+                            SizedBox(width: 5),
+                            Container(
+                              width: 50,
+                              height: 20,
+                              child: TextField(
+                                decoration: InputDecoration(),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Text('删除全部'),
+                      ]),
+                  SizedBox(height: 10),
+                  Container(
+                      height: 70,
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                                flex: 1,
+                                child: SizedBox(
+                                    height: 40,
+                                    child: RaisedButton(
+                                        color: Colors.blue,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.add,
+                                                color: Colors.white),
+                                            SizedBox(width: 8),
+                                            Text("上传图片",
+                                                style: TextStyle(
+                                                    color: Colors.white))
+                                          ],
+                                        ),
+                                        onPressed: () {}))),
+                            SizedBox(width: 20),
+                            Expanded(
+                                flex: 1,
+                                child: SizedBox(
+                                    height: 40,
+                                    child: RaisedButton(
+                                        color: Colors.blue,
+                                        child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(Icons.publish,
+                                                  color: Colors.white),
+                                              SizedBox(width: 8),
+                                              Text("生成字体",
+                                                  style: TextStyle(
+                                                      color: Colors.white)),
+                                            ]),
+                                        onPressed: () {}))),
+                          ]))
+                ],
+              )),
+        ),
       ],
     );
   }
