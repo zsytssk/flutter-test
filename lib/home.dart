@@ -27,6 +27,12 @@ class _MyHomePageState extends State<MyHomePage> {
     combine(model.fileList);
   }
 
+  setModel(Model newModel) {
+    setState(() => {
+          model: newModel,
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     final allHeight = MediaQuery.of(context).size.height;
@@ -52,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: FileList(fileList: model.fileList)),
               SizedBox(height: space),
               Container(
-                child: BottomBar(model: model),
+                child: BottomBar(model: model, setModel: setModel),
                 height: bottomHeight,
               )
             ]),

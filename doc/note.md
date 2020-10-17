@@ -2,6 +2,17 @@ https://www.youtube.com/watch?v=jAxNZYX7mHM&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 ## 2020-10-11 09:53:19
 
+- @ques 每一个字体的样式都需要重新设置 也挺麻烦的
+
+  - 有没有继承的关系
+
+- @ques radio 的 size 怎么设置
+
+  - 怎么设置 shadow 的大小
+  - 怎么点击字体触发 radio 的事件
+
+- @ques RadioList
+
 - @ques 如何获取上级的 state
 
   - 不需要直接传进去

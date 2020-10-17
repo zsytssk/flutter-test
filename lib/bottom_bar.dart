@@ -1,45 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/components/radio_label.dart';
 import 'package:my_app/model.dart';
+
+const textStyle = TextStyle(fontSize: 12);
 
 class BottomBar extends StatelessWidget {
   final Model model;
-  BottomBar({this.model});
+  final void Function(Model model) setModel;
+  BottomBar({this.model, this.setModel});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Container(
-            width: 100,
-            color: Colors.red,
-            child: Column(children: [
-              Text('字号：--'),
-              Text('字体类型'),
+            margin: EdgeInsets.only(left: 10),
+            width: 200,
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text('字号：--', style: textStyle),
+              Text('字体类型', style: textStyle),
               Container(
-                height: 100,
-                child: const ListTile(
-                  title: Text('One-line with trailing widget'),
-                  trailing: Icon(Icons.more_vert),
+                child: RadioLabel(
+                  value: FontType.XML,
+                  groupValue: model.fontType,
+                  label: 'XML(Laya)',
+                  onChanged: (FontType value) {
+                    model.setFontType(value);
+                    setModel(model);
+                  },
                 ),
-                //  ListTile(
-                //   title: const Text('XML(Laya)'),
-                //   leading: Radio(
-                //     value: FontType.XML,
-                //     groupValue: model.fontType,
-                //     onChanged: (FontType value) {},
-                //   ),
-                // ),
               ),
-              // Container(
-              //   child: ListTile(
-              //     title: const Text('TEXT(Cocos2d)'),
-              //     leading: Radio(
-              //       value: FontType.XML,
-              //       groupValue: model.fontType,
-              //       onChanged: (FontType value) {},
-              //     ),
-              //   ),
-              // ),
+              Container(
+                child: RadioLabel(
+                  value: FontType.TEXT,
+                  groupValue: model.fontType,
+                  label: 'Text(Cocos2d)',
+                  onChanged: (FontType value) {
+                    model.setFontType(value);
+                    setModel(model);
+                  },
+                ),
+              ),
             ])),
         // Container(
         //     color: Colors.blue,
