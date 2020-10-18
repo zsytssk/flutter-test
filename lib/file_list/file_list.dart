@@ -1,5 +1,5 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:my_app/file_list/file_item.dart';
 
 class FileList extends StatelessWidget {
   final List<String> fileList;
@@ -7,12 +7,13 @@ class FileList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(fileList);
     return Container(
       color: Color(0xc8cadc),
       child: ListView.builder(
           itemCount: fileList.length,
           itemBuilder: (BuildContext context, int index) {
-            return Image.file(File(fileList[index]), width: 100, height: 100);
+            return FileItem(filePath: fileList[index]);
           }),
     );
   }

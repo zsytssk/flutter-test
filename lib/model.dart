@@ -1,3 +1,5 @@
+import 'package:my_app/utils.dart';
+
 enum FontType { XML, TEXT }
 
 class Model {
@@ -8,5 +10,18 @@ class Model {
   setFontType(FontType fontType) {
     print(fontType);
     this.fontType = fontType;
+  }
+
+  uploadFile() async {
+    final files = await pickOpenFiles();
+    if (files.length > 0) {
+      for (final file in files) {
+        fileList.add(file);
+      }
+    }
+  }
+
+  onCombine() {
+    combine(fileList);
   }
 }

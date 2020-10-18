@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/bottom_bar/bottom_bar.dart';
 import 'package:my_app/utils.dart';
-import 'file_list.dart';
+import 'file_list/file_list.dart';
 import './model.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -11,21 +11,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Model model = new Model();
-  onUpload() async {
-    final files = await pickOpenFiles();
-    if (files.length > 0) {
-      for (final file in files) {
-        model.fileList.add(file);
-        setState(() => {
-              model,
-            });
-      }
-    }
-  }
-
-  onCombine() {
-    combine(model.fileList);
-  }
 
   setModel(Model newModel) {
     setState(() => {

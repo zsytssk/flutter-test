@@ -92,14 +92,25 @@ class BottomBar extends StatelessWidget {
                                 child: SizedBox(
                                     height: 40,
                                     child: ButtonWithIcon(
-                                        icon: Icons.add, label: '上传图片'))),
+                                        onPressed: () {
+                                          model.uploadFile().then((value) {
+                                            setModel(model);
+                                            return value;
+                                          });
+                                        },
+                                        icon: Icons.add,
+                                        label: '上传图片'))),
                             SizedBox(width: 20),
                             Expanded(
                                 flex: 1,
                                 child: SizedBox(
                                     height: 40,
                                     child: ButtonWithIcon(
-                                        icon: Icons.publish, label: '生成字体'))),
+                                        onPressed: () {
+                                          model.onCombine();
+                                        },
+                                        icon: Icons.publish,
+                                        label: '生成字体'))),
                           ]))
                 ],
               )),
