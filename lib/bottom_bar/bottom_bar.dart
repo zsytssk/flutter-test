@@ -7,8 +7,9 @@ const textStyle = TextStyle(fontSize: 12);
 
 class BottomBar extends StatelessWidget {
   final Model model;
-  final void Function(Model model) setModel;
-  BottomBar({this.model, this.setModel});
+  final void Function() updateModel;
+
+  BottomBar({this.model, this.updateModel});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class BottomBar extends StatelessWidget {
                   label: 'XML(Laya)',
                   onChanged: (FontType value) {
                     model.setFontType(value);
-                    setModel(model);
+                    updateModel();
                   },
                 ),
               ),
@@ -51,7 +52,7 @@ class BottomBar extends StatelessWidget {
                   label: 'Text(Cocos2d)',
                   onChanged: (FontType value) {
                     model.setFontType(value);
-                    setModel(model);
+                    updateModel();
                   },
                 ),
               ),
@@ -74,7 +75,15 @@ class BottomBar extends StatelessWidget {
                               width: 50,
                               height: 20,
                               child: TextField(
+                                textAlign: TextAlign.center,
+                                controller: TextEditingController()
+                                  ..text = model.space.toString(),
                                 decoration: InputDecoration(),
+                                keyboardType: TextInputType.number,
+                                onChanged: (value) {
+                                  model.setSpace(int.parse(value));
+                                  updateModel();
+                                },
                               ),
                             ),
                           ],
@@ -94,7 +103,7 @@ class BottomBar extends StatelessWidget {
                                     child: ButtonWithIcon(
                                         onPressed: () {
                                           model.uploadFile().then((value) {
-                                            setModel(model);
+                                            updateModel();
                                             return value;
                                           });
                                         },

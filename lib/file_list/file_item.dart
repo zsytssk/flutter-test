@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:my_app/components/on_hover.dart';
 import 'package:my_app/components/on_hover_image.dart';
+import 'package:my_app/model.dart' as Model;
 
 class FileItem extends StatefulWidget {
-  final String filePath;
-  FileItem({this.filePath});
+  final Model.FileItem file;
+  final Model.Model model;
+  final Function updateModel;
+  FileItem({this.file, this.model, this.updateModel});
 
   @override
   _FileItemState createState() => _FileItemState();
@@ -22,7 +24,6 @@ class _FileItemState extends State<FileItem> {
       child: InkWell(
         onTap: () {},
         onHover: (value) {
-          print(value);
           if (value) {
             setState(() {
               isHover = true;
@@ -47,19 +48,25 @@ class _FileItemState extends State<FileItem> {
                 children: [
                   Row(
                     children: [
-                      Image.file(File(widget.filePath), width: 60, height: 60),
+                      Image.file(File(widget.file.path), width: 60, height: 60),
                       SizedBox(width: 20),
                       Container(
                         width: 30,
                         height: 30,
                         child: TextField(
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.w600),
-                            decoration: const InputDecoration(
-                              contentPadding:
-                                  const EdgeInsets.only(bottom: 13, top: 5),
-                            )),
+                          controller: TextEditingController()
+                            ..text = String.fromCharCode(widget.file.charcode),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 25, fontWeight: FontWeight.w600),
+                          decoration: const InputDecoration(
+                            contentPadding:
+                                const EdgeInsets.only(bottom: 13, top: 5),
+                          ),
+                          onChanged: (value) {
+                            widget.file.setChar(value);
+                          },
+                        ),
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage("assets/images/icon_grid.png"),
@@ -71,6 +78,10 @@ class _FileItemState extends State<FileItem> {
                   ),
                   if (isHover)
                     OnHoverImage(
+                      onTap: () {
+                        widget.model.removeFile(widget.file);
+                        widget.updateModel();
+                      },
                       width: 35,
                       height: 24,
                       img1: "assets/images/icon_del_normal.png",

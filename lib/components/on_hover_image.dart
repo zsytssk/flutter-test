@@ -6,8 +6,10 @@ class OnHoverImage extends OnHover {
   final double height;
   final String img1;
   final String img2;
-  OnHoverImage({this.img1, this.img2, this.width, this.height})
+
+  OnHoverImage({this.img1, this.img2, this.width, this.height, Function onTap})
       : super(
+          onTap: onTap,
           child1: Container(
             width: width,
             height: height,

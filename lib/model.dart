@@ -1,14 +1,14 @@
-import 'package:my_app/utils.dart';
+import 'package:my_app/utils/utils.dart';
+import 'package:path/path.dart';
 
 enum FontType { XML, TEXT }
 
 class Model {
-  List<String> fileList = [];
-  int fontSize;
+  List<FileItem> fileList = [];
+  int fontSize = 20;
   FontType fontType = FontType.TEXT;
-  int space;
+  int space = 2;
   setFontType(FontType fontType) {
-    print(fontType);
     this.fontType = fontType;
   }
 
@@ -16,12 +16,40 @@ class Model {
     final files = await pickOpenFiles();
     if (files.length > 0) {
       for (final file in files) {
-        fileList.add(file);
+        fileList.add(FileItem(path: file));
+      }
+    }
+  }
+
+  removeFile(FileItem file) {
+    fileList.remove(file);
+  }
+
+  setFileChar(String path, String char) {
+    for (final file in fileList) {
+      if (file.path == path) {
+        file.setChar(char);
       }
     }
   }
 
   onCombine() {
-    combine(fileList);
+    combine(this);
+  }
+
+  setSpace(int space) {
+    this.space = space;
+  }
+}
+
+class FileItem {
+  String path;
+  int charcode;
+  FileItem({this.path}) {
+    String filename = basename(path);
+    charcode = filename.codeUnitAt(0);
+  }
+  setChar(String char) {
+    this.charcode = char.codeUnitAt(0);
   }
 }

@@ -1,10 +1,20 @@
 https://www.youtube.com/watch?v=jAxNZYX7mHM&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=20
 
-## 2020-10-11 09:53:19
+## 2020-10-18 10:15:53
+
+- @todo rect_pack
+
+- @todo 生成字体的格式...
+
+  - letter.charCodeAt(0)
+
+- @ques 如何 alert
+
+## 2020-10-11 09:53:19E
 
 flutter InkWell
 
-- @ques 每一个字体的样式都需要重新设置 也挺麻烦的
+- @ques 每一个字体的样式都需要重新设置 也挺麻烦的 N
 
   - 有没有继承的关系
 
@@ -52,6 +62,8 @@ flutter InkWell
 ### end
 
 怎么打包成 exe
+
+alert 生成成功
 
 ## 2020-10-08 09:42:25
 

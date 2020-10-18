@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/bottom_bar/bottom_bar.dart';
-import 'package:my_app/utils.dart';
 import 'file_list/file_list.dart';
 import './model.dart';
 
@@ -12,9 +11,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   Model model = new Model();
 
-  setModel(Model newModel) {
+  updateModel() {
     setState(() => {
-          model: newModel,
+          model: model,
         });
   }
 
@@ -40,10 +39,13 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Colors.blueAccent,
                         width: 1,
                       )),
-                  child: FileList(fileList: model.fileList)),
+                  child: FileList(
+                      fileList: model.fileList,
+                      model: model,
+                      updateModel: updateModel)),
               SizedBox(height: space),
               Container(
-                child: BottomBar(model: model, setModel: setModel),
+                child: BottomBar(model: model, updateModel: updateModel),
                 height: bottomHeight,
               )
             ]),
