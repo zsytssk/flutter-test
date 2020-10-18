@@ -9,6 +9,8 @@ https://www.youtube.com/watch?v=jAxNZYX7mHM&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
   - letter.charCodeAt(0)
 
 - @ques 如何 alert
+  - @ques 拥有相同的 charCode 的提示
+  - 加载成功
 
 ## 2020-10-11 09:53:19E
 

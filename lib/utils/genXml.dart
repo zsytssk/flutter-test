@@ -22,9 +22,13 @@ String genXml(
 </font>''';
 
   String items_str = '';
-  for (final item in items) {
+  for (int i = 0; i < items.length; i++) {
+    final item = items[i];
     items_str +=
-        '      <char id="${item.id}" x="${item.x}" y="${item.y}" width="${item.width - spacing}" height="${item.height - spacing}" xoffset="0" yoffset="0" xadvance="${item.width - spacing}" page="0" chnl="15" />\n';
+        '      <char id="${item.id}" x="${item.x}" y="${item.y}" width="${item.width - spacing}" height="${item.height - spacing}" xoffset="0" yoffset="0" xadvance="${item.width - spacing}" page="0" chnl="15" />';
+    if (i != items.length - 1) {
+      items_str += '\n';
+    }
   }
 
   return tpl.replaceFirst('{items}', items_str);

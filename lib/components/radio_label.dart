@@ -5,7 +5,7 @@ class RadioLabel<T> extends StatelessWidget {
   final T groupValue;
   final ValueChanged<T> onChanged;
   final String label;
-  RadioLabel({this.value, this.groupValue, this.onChanged, this.label}) {}
+  RadioLabel({this.value, this.groupValue, this.onChanged, this.label});
 
   @override
   build(BuildContext context) {

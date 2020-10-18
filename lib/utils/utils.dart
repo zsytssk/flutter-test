@@ -1,12 +1,14 @@
+import 'package:flutter/material.dart' as Material;
 import 'package:file_chooser/file_chooser.dart';
 import 'package:image/image.dart';
 import 'dart:async';
 import 'dart:io';
+import 'dart:ui' as ui;
 import 'package:path/path.dart';
 import 'dart:convert';
 
 import 'package:my_app/utils/rect_pack/rect_pack.dart';
-import 'package:my_app/utils/toXml.dart';
+import 'package:my_app/utils/genXml.dart';
 
 import '../model.dart';
 
@@ -92,5 +94,17 @@ Future<List<FileSystemEntity>> dirContents(String dirStr) async {
   lister.listen((file) => files.add(file),
       // should also register onError
       onDone: () => completer.complete(files));
+  return completer.future;
+}
+
+Future<ui.Image> loadImg(String path) {
+  final Completer<ui.Image> completer = Completer();
+  final image = Material.FileImage(File(path));
+
+  image.resolve(Material.ImageConfiguration()).addListener(
+      Material.ImageStreamListener((Material.ImageInfo info, bool isSync) {
+    completer.complete(info.image);
+  }));
+
   return completer.future;
 }

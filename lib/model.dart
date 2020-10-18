@@ -1,4 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:my_app/utils/utils.dart';
+import 'dart:io';
+import 'dart:async';
 import 'package:path/path.dart';
 
 enum FontType { XML, TEXT }
@@ -6,7 +9,7 @@ enum FontType { XML, TEXT }
 class Model {
   List<FileItem> fileList = [];
   int fontSize = 20;
-  FontType fontType = FontType.TEXT;
+  FontType fontType = FontType.XML;
   int space = 2;
   setFontType(FontType fontType) {
     this.fontType = fontType;
@@ -19,6 +22,8 @@ class Model {
         fileList.add(FileItem(path: file));
       }
     }
+
+    await loadImg(files[0]).then((img) => fontSize = img.height.round());
   }
 
   removeFile(FileItem file) {
@@ -39,6 +44,10 @@ class Model {
 
   setSpace(int space) {
     this.space = space;
+  }
+
+  clear() {
+    fileList.clear();
   }
 }
 

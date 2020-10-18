@@ -27,8 +27,14 @@ class BottomBar extends StatelessWidget {
                     width: 50,
                     height: 30,
                     child: TextField(
+                      style: TextStyle(fontSize: 12),
+                      controller: TextEditingController()
+                        ..text = model.fontSize.toString(),
                       decoration: InputDecoration(
-                          border: InputBorder.none, hintText: '--'),
+                          contentPadding:
+                              const EdgeInsets.only(bottom: 18, top: 0),
+                          border: InputBorder.none,
+                          hintText: '--'),
                     ),
                   )
                 ],
@@ -88,7 +94,12 @@ class BottomBar extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Text('删除全部'),
+                        InkWell(
+                            onTap: () {
+                              model.clear();
+                              updateModel();
+                            },
+                            child: Text('删除全部'))
                       ]),
                   SizedBox(height: 10),
                   Container(
