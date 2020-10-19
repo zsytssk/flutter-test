@@ -82,7 +82,7 @@ combine(Model model) async {
 
   /** macos 智能保存用户选中的文件，所以必须两次选中文件 （我不知道有什么其他方法）*/
   if (Platform.isMacOS) {
-    final filenames = (await pickSaveFile('fnt'));
+    final filenames = (await pickSaveFile('fnt', filename: filename));
     if (filenames == null && filenames.length > 0) {
       return;
     }
