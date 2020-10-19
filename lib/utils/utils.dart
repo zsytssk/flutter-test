@@ -24,10 +24,11 @@ pickOpenFiles() {
   });
 }
 
-Future<List<String>> pickSaveFile() {
+Future<List<String>> pickSaveFile(String fileType, {String filename}) {
   return showSavePanel(
+    suggestedFileName: filename,
     allowedFileTypes: [
-      FileTypeFilterGroup(label: 'fnt', fileExtensions: ['fnt', 'png', 'jpg']),
+      FileTypeFilterGroup(label: 'image', fileExtensions: [fileType]),
     ],
   ).then((result) => result.paths);
 }
@@ -58,16 +59,15 @@ combine(Model model) async {
     copyInto(mergedImage, item['img'], dstX: rectItem.x, dstY: rectItem.y);
   }
 
-  final filenames = (await pickSaveFile());
+  final filenames = (await pickSaveFile('png'));
 
-  if (filenames == null) {
+  if (filenames == null && filenames.length > 0) {
     return;
   }
-  print(filenames);
 
   final filePath = filenames[0];
   final dir = dirname(filePath);
-  final filename = basenameWithoutExtension(filePath);
+  var filename = basenameWithoutExtension(filePath);
 
   final xml = genXml(
       items: items,
@@ -78,9 +78,19 @@ combine(Model model) async {
       fileName: filename);
 
   final imgPath = join(dir, '$filename.png');
+  await saveFile(imgPath, encodePng(mergedImage));
+
+  /** macos 智能保存用户选中的文件，所以必须两次选中文件 （我不知道有什么其他方法）*/
+  if (Platform.isMacOS) {
+    final filenames = (await pickSaveFile('fnt'));
+    if (filenames == null && filenames.length > 0) {
+      return;
+    }
+    final filePath = filenames[0];
+    filename = basenameWithoutExtension(filePath);
+  }
   final xmlPath = join(dir, '$filename.fnt');
   await saveFile(xmlPath, utf8.encode(xml));
-  await saveFile(imgPath, encodePng(mergedImage));
 }
 
 saveFile(String path, List<int> content) async {
