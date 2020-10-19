@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' as Material;
 import 'package:file_chooser/file_chooser.dart';
 import 'package:image/image.dart';
+import 'package:my_app/utils/toast.dart';
 import 'dart:async';
 import 'dart:io';
 import 'dart:ui' as ui;
@@ -26,7 +27,7 @@ pickOpenFiles() {
 Future<List<String>> pickSaveFile() {
   return showSavePanel(
     allowedFileTypes: [
-      FileTypeFilterGroup(label: 'image', fileExtensions: ['png', 'jpg']),
+      FileTypeFilterGroup(label: 'fnt', fileExtensions: ['fnt', 'png', 'jpg']),
     ],
   ).then((result) => result.paths);
 }
@@ -62,6 +63,7 @@ combine(Model model) async {
   if (filenames == null) {
     return;
   }
+  print(filenames);
 
   final filePath = filenames[0];
   final dir = dirname(filePath);
@@ -77,8 +79,16 @@ combine(Model model) async {
 
   final imgPath = join(dir, '$filename.png');
   final xmlPath = join(dir, '$filename.fnt');
-  File(imgPath).writeAsBytesSync(encodePng(mergedImage));
-  File(xmlPath).writeAsBytesSync(utf8.encode(xml));
+  await saveFile(xmlPath, utf8.encode(xml));
+  await saveFile(imgPath, encodePng(mergedImage));
+}
+
+saveFile(String path, List<int> content) async {
+  var file = File(path);
+  if (!await file.exists()) {
+    file = await file.create();
+  }
+  return file.writeAsBytesSync(content);
 }
 
 Future<List<FileSystemEntity>> dirContents(String dirStr) async {

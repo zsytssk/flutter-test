@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/bottom_bar/button_with_icon.dart';
 import 'package:my_app/components/radio_label.dart';
 import 'package:my_app/model.dart';
+import 'package:my_app/utils/toast.dart';
 
 const textStyle = TextStyle(fontSize: 12);
 
@@ -127,7 +128,9 @@ class BottomBar extends StatelessWidget {
                                     height: 40,
                                     child: ButtonWithIcon(
                                         onPressed: () {
-                                          model.onCombine();
+                                          model.onCombine().then((_val) {
+                                            tip(context, '合并图片成功');
+                                          });
                                         },
                                         icon: Icons.publish,
                                         label: '生成字体'))),
