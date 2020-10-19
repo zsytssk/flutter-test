@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' as Material;
 import 'package:file_chooser/file_chooser.dart';
 import 'package:image/image.dart';
+import 'package:my_app/utils/toast.dart';
 import 'dart:async';
 import 'dart:io';
 import 'dart:ui' as ui;
@@ -23,10 +24,11 @@ pickOpenFiles() {
   });
 }
 
-Future<List<String>> pickSaveFile() {
+Future<List<String>> pickSaveFile(String fileType, {String filename}) {
   return showSavePanel(
+    suggestedFileName: filename,
     allowedFileTypes: [
-      FileTypeFilterGroup(label: 'image', fileExtensions: ['png', 'jpg']),
+      FileTypeFilterGroup(label: 'image', fileExtensions: [fileType]),
     ],
   ).then((result) => result.paths);
 }
@@ -57,15 +59,15 @@ combine(Model model) async {
     copyInto(mergedImage, item['img'], dstX: rectItem.x, dstY: rectItem.y);
   }
 
-  final filenames = (await pickSaveFile());
+  final filenames = (await pickSaveFile('png'));
 
-  if (filenames == null) {
+  if (filenames == null && filenames.length > 0) {
     return;
   }
 
   final filePath = filenames[0];
   final dir = dirname(filePath);
-  final filename = basenameWithoutExtension(filePath);
+  var filename = basenameWithoutExtension(filePath);
 
   final xml = genXml(
       items: items,
@@ -76,9 +78,27 @@ combine(Model model) async {
       fileName: filename);
 
   final imgPath = join(dir, '$filename.png');
+  await saveFile(imgPath, encodePng(mergedImage));
+
+  /** macos 智能保存用户选中的文件，所以必须两次选中文件 （我不知道有什么其他方法）*/
+  if (Platform.isMacOS) {
+    final filenames = (await pickSaveFile('fnt', filename: filename));
+    if (filenames == null && filenames.length > 0) {
+      return;
+    }
+    final filePath = filenames[0];
+    filename = basenameWithoutExtension(filePath);
+  }
   final xmlPath = join(dir, '$filename.fnt');
-  File(imgPath).writeAsBytesSync(encodePng(mergedImage));
-  File(xmlPath).writeAsBytesSync(utf8.encode(xml));
+  await saveFile(xmlPath, utf8.encode(xml));
+}
+
+saveFile(String path, List<int> content) async {
+  var file = File(path);
+  if (!await file.exists()) {
+    file = await file.create();
+  }
+  return file.writeAsBytesSync(content);
 }
 
 Future<List<FileSystemEntity>> dirContents(String dirStr) async {

@@ -38,8 +38,8 @@ class Model {
     }
   }
 
-  onCombine() {
-    combine(this);
+  Future<void> onCombine() {
+    return combine(this);
   }
 
   setSpace(int space) {

@@ -2,6 +2,15 @@ https://www.youtube.com/watch?v=jAxNZYX7mHM&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 ## 2020-10-18 10:15:53
 
+simple_animation
+
+- @ques macos The linked and embedded framework 'App.framework' is missing one or more architectures required by this target: arm64.
+- FlutterMacOS.framework' is missing one or more architectures required by this target: arm64.
+
+fit
+
+rect-pack dart
+
 - @todo rect_pack
 
 - @todo 生成字体的格式...
