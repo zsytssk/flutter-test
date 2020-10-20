@@ -1,8 +1,10 @@
+- @TODO 每天五个 本周 Flutter 小部件， 一个教程
+
 - @ques flutter 打包的文件究竟有多大 是几 M 还是 十几 M 还是其他
 
   - Android 几 M, 这非常好
-  - ios
-  - windows
+  - ios > 40M
+  - windows > 10M
 
 - @ques 能不能用 flutter 做一个合并图集得 工具
   - 上传文件
