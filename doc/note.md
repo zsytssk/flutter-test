@@ -2,6 +2,8 @@ https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 ## 2020-10-20 09:38:41
 
+Configuring Flutter to use a mirror site
+
 - @todo build apk
 - @todo rect_pack
 
