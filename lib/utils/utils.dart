@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart' as Material;
 import 'package:file_chooser/file_chooser.dart';
 import 'package:image/image.dart';
-import 'package:my_app/utils/toast.dart';
 import 'dart:async';
 import 'dart:io';
 import 'dart:ui' as ui;
 import 'package:path/path.dart';
+import 'package:rect_pack/rect_pack.dart';
 import 'dart:convert';
 
-import 'package:my_app/utils/rect_pack/rect_pack.dart';
 import 'package:my_app/utils/genXml.dart';
 
 import '../model.dart';
@@ -36,19 +35,19 @@ Future<List<String>> pickSaveFile(String fileType, {String filename}) {
 combine(Model model) async {
   final space = model.space;
 
-  List<Item> imgList = [];
+  List<InputItem> imgList = [];
   for (final file in model.fileList) {
     final img = decodeImage(File(file.path).readAsBytesSync());
-    imgList.add(Item(
+    imgList.add(InputItem(
         item: {'img': img, 'file': file},
         width: img.width + space,
         height: img.height + space));
   }
   final rect = rectPack(imgList);
   List<XMLItem> items = [];
-  final Image mergedImage = Image(rect['width'], rect['height']);
-  for (final rectItem in rect['items']) {
-    final item = rectItem.item.item;
+  final Image mergedImage = Image(rect.width, rect.height);
+  for (final rectItem in rect.items) {
+    final item = rectItem.item;
     items.add(XMLItem(
         id: item['file'].charcode,
         x: rectItem.x,
@@ -73,8 +72,8 @@ combine(Model model) async {
       items: items,
       fontSize: model.fontSize,
       spacing: model.space,
-      width: rect['width'],
-      height: rect['height'],
+      width: rect.width,
+      height: rect.height,
       fileName: filename);
 
   final imgPath = join(dir, '$filename.png');

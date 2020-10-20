@@ -1,4 +1,22 @@
-https://www.youtube.com/watch?v=jAxNZYX7mHM&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=20
+https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=22
+
+## 2020-10-20 09:38:41
+
+- @todo build apk
+- @todo rect_pack
+
+  - https://dart.dev/guides/libraries/create-library-packages
+  - 如何添加 demo api
+  - 怎么在线上看不到
+  - 添加文档 dartdoc
+    - 怎么看 文档
+  - 写 test
+
+- @todo 将项目抽离出来
+
+- @ques 如何成为一个 已验证发布者
+
+- dart 定义 一个 object
 
 ## 2020-10-18 10:15:53
 
@@ -10,8 +28,6 @@ simple_animation
 fit
 
 rect-pack dart
-
-- @todo rect_pack
 
 - @todo 生成字体的格式...
 
