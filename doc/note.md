@@ -2,11 +2,10 @@ https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 ## 2020-10-21 09:26:56
 
-- @ques 要不要写一个
-  - OnHover.build
+- @todo 将传递 model 的全部删除
 
-fit
-InkWell
+- @ques flutter file picker showSavePanel 怎么保存文件
+- @ques ios open file 权限
 
 inHeritedWidget
 
@@ -17,6 +16,14 @@ ValueListener
   - app_icon.ico
 
 - @ques inherited widget | valueListenerBuilder
+
+### end
+
+- @ques 要不要写一个
+  - OnHover.build
+
+fit
+InkWell
 
 ## 2020-10-20 09:38:41
 

@@ -8,31 +8,55 @@ import 'package:path/path.dart';
 import 'package:rect_pack/rect_pack.dart';
 import 'dart:convert';
 
+import 'package:file_picker/file_picker.dart';
+
 import 'package:my_app/utils/genXml.dart';
 
-import '../model.dart';
+import '../home/home_model.dart';
 
 pickOpenFiles() {
-  return showOpenPanel(
-    allowsMultipleSelection: true,
-    allowedFileTypes: [
-      FileTypeFilterGroup(label: 'image', fileExtensions: ['png', 'jpg']),
-    ],
-  ).then((val) {
-    return val.paths;
+  if (Platform.isMacOS || Platform.isWindows) {
+    return showOpenPanel(
+      allowsMultipleSelection: true,
+      allowedFileTypes: [
+        FileTypeFilterGroup(label: 'image', fileExtensions: ['png', 'jpg']),
+      ],
+    ).then((val) {
+      return val.paths;
+    });
+  }
+
+  final result = FilePicker.platform.pickFiles(
+    type: FileType.custom,
+    allowMultiple: true,
+    allowedExtensions: ['jpg', 'png'],
+  ).then((result) {
+    return result.files.map((e) => e.path).toList();
   });
+
+  return result;
 }
 
 Future<List<String>> pickSaveFile(String fileType, {String filename}) {
-  return showSavePanel(
-    suggestedFileName: filename,
-    allowedFileTypes: [
-      FileTypeFilterGroup(label: 'image', fileExtensions: [fileType]),
-    ],
-  ).then((result) => result.paths);
+  if (Platform.isMacOS || Platform.isWindows) {
+    return showSavePanel(
+      suggestedFileName: filename,
+      allowedFileTypes: [
+        FileTypeFilterGroup(label: 'image', fileExtensions: [fileType]),
+      ],
+    ).then((result) => result.paths);
+  }
+
+  return FilePicker.platform.pickFiles(
+    type: FileType.custom,
+    allowMultiple: true,
+    allowedExtensions: ['jpg', 'png'],
+  ).then((result) {
+    return result.files.map((e) => e.path).toList();
+  });
 }
 
-combine(Model model) async {
+combine(HomeData model) async {
   final space = model.space;
 
   List<InputItem> imgList = [];

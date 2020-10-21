@@ -6,7 +6,6 @@ class OnHoverContainer extends StatefulWidget {
   final void Function() onTap;
   final BuildFun build;
   OnHoverContainer({this.onTap, this.build}) : super();
-
   @override
   _OnHoverContainerState createState() => _OnHoverContainerState();
 }

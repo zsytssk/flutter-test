@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/file_list/file_item.dart';
-import 'package:my_app/model.dart' as Model;
+import 'package:my_app/home/home_model.dart' as Model;
 
 class FileList extends StatelessWidget {
   final List<Model.FileItem> fileList;
-  final Model.Model model;
-  final Function updateModel;
-  FileList({this.fileList, this.model, this.updateModel});
+  final Model.HomeNotifier model;
+  FileList({this.fileList, this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +14,7 @@ class FileList extends StatelessWidget {
       child: ListView.builder(
           itemCount: fileList.length,
           itemBuilder: (BuildContext context, int index) {
-            return FileItem(
-                file: fileList[index], model: model, updateModel: updateModel);
+            return FileItem(file: fileList[index]);
           }),
     );
   }
