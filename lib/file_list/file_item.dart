@@ -22,6 +22,7 @@ class _FileItemState extends State<FileItem> {
     return Container(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
+        hoverColor: Colors.transparent,
         onTap: () {},
         onHover: (value) {
           if (value) {
@@ -48,7 +49,11 @@ class _FileItemState extends State<FileItem> {
                 children: [
                   Row(
                     children: [
-                      Image.file(File(widget.file.path), width: 60, height: 60),
+                      Image.file(
+                        File(widget.file.path),
+                        width: 60,
+                        height: 60,
+                      ),
                       SizedBox(width: 20),
                       Container(
                         width: 30,

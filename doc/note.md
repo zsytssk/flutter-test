@@ -1,10 +1,33 @@
 https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=22
 
+## 2020-10-21 09:26:56
+
+- @ques 要不要写一个
+  - OnHover.build
+
+fit
+InkWell
+
+inHeritedWidget
+
+ValueListener
+
+- @ques 换 app 的 icon
+
+  - app_icon.ico
+
+- @ques inherited widget | valueListenerBuilder
+
 ## 2020-10-20 09:38:41
 
 Configuring Flutter to use a mirror site
 
 - @todo build apk
+
+- dart 定义 一个 object Map 好像不行
+
+## end
+
 - @todo rect_pack
 
   - https://dart.dev/guides/libraries/create-library-packages
@@ -17,8 +40,7 @@ Configuring Flutter to use a mirror site
 - @todo 将项目抽离出来
 
 - @ques 如何成为一个 已验证发布者
-
-- dart 定义 一个 object
+  rect-pack dart
 
 ## 2020-10-18 10:15:53
 
@@ -29,7 +51,7 @@ simple_animation
 
 fit
 
-rect-pack dart
+### end
 
 - @todo 生成字体的格式...
 
@@ -77,7 +99,9 @@ rect-pack dart
 - @ques 怎么修改文件名
 
 - @ques 换 app 的 icon
+
   - app_icon.ico
+
 - @ques 如何 picker 多个文件
 
 - @ques 如何选择文件夹 保存文件
