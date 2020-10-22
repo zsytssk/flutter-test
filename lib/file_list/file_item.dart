@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:my_app/components/on_hover_image.dart';
-import 'package:my_app/home/home_inherited.dart';
+import 'package:my_app/components/home_inherited.dart';
 import 'package:my_app/home/home_model.dart' as Model;
 
 class FileItem extends StatefulWidget {
@@ -19,7 +19,8 @@ class _FileItemState extends State<FileItem> {
   @override
   Widget build(BuildContext context) {
     final model =
-        HomeInheritedWidget.of<Model.HomeData, Model.HomeNotifier>(context)
+        InheritedWidgetOnValueListen.of<Model.HomeData, Model.HomeNotifier>(
+                context)
             .model as Model.HomeNotifier;
     return Container(
       padding: const EdgeInsets.all(8.0),
