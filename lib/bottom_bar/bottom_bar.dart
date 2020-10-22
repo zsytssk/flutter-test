@@ -13,7 +13,7 @@ class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final inheritedWidget =
-        HomeInheritedWidget.of(context) as HomeInheritedWidget;
+        HomeInheritedWidget.of<HomeData, HomeNotifier>(context);
 
     if (inheritedWidget == null) {
       return Text('none');

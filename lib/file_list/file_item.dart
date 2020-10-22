@@ -18,6 +18,9 @@ class _FileItemState extends State<FileItem> {
 
   @override
   Widget build(BuildContext context) {
+    final model =
+        HomeInheritedWidget.of<Model.HomeData, Model.HomeNotifier>(context)
+            .model as Model.HomeNotifier;
     return Container(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
@@ -83,7 +86,7 @@ class _FileItemState extends State<FileItem> {
                   if (isHover)
                     OnHoverImage(
                       onTap: () {
-                        // @todo
+                        model.removeFile(widget.file);
                       },
                       width: 35,
                       height: 24,

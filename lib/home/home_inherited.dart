@@ -1,22 +1,23 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/home/home_model.dart';
 
-class HomeInheritedWidget extends InheritedWidget {
+class HomeInheritedWidget<T, M extends ValueListenable<T>>
+    extends InheritedWidget {
   HomeInheritedWidget({
     Key key,
     @required this.model,
-    @required Widget Function(BuildContext, HomeData, Widget) builder,
-  })  : assert(model != null),
-        assert(builder != null),
-        super(
+    @required Widget Function(BuildContext, T, Widget) builder,
+  }) : super(
             key: key,
             child: ValueListenableBuilder(
                 valueListenable: model, builder: builder));
 
-  final HomeNotifier model;
+  final M model;
 
-  static HomeInheritedWidget of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<HomeInheritedWidget>();
+  static HomeInheritedWidget of<T, M extends ValueListenable<T>>(
+      BuildContext context) {
+    return context
+        .dependOnInheritedWidgetOfExactType<HomeInheritedWidget<T, M>>();
   }
 
   @override

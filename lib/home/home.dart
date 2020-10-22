@@ -25,8 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
           body: HomeInheritedWidget(
               model: HomeNotifier(HomeData()),
               builder: (BuildContext context, HomeData model, _) {
-                print(model);
-                print(HomeInheritedWidget.of(context));
+                print(HomeInheritedWidget.of<HomeData, HomeNotifier>(context));
                 return Container(
                   child: Column(children: [
                     Container(
