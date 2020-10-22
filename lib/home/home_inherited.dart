@@ -1,42 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/home/home_model.dart';
 
-// class HomeInheritedWidget<T, M extends ValueNotifier<T>>
-//     extends InheritedWidget {
-//   final M model;
-//   HomeInheritedWidget(
-//       {this.model, Widget Function(BuildContext, T, Widget) builder})
-//       : super(
-//             child: ValueListenableBuilder(
-//           valueListenable: model,
-//           builder: (context, value, child) {
-//             print(model);
-//             print(value);
-//             return Text(value.toString());
-//           },
-//         ));
-//   bool updateShouldNotify(HomeInheritedWidget oldWidget) {
-//     return true;
-//   }
-
-//   static HomeInheritedWidget of(BuildContext context) {
-//     return context.dependOnInheritedWidgetOfExactType<HomeInheritedWidget>();
-//   }
-// }
-
-class HomeInheritedWidget<T, M extends ValueNotifier<T>>
-    extends InheritedWidget {
-  final M model;
-  HomeInheritedWidget(
-      {this.model, Widget Function(BuildContext, T, Widget) builder})
-      : super(
+class HomeInheritedWidget extends InheritedWidget {
+  HomeInheritedWidget({
+    Key key,
+    @required this.model,
+    @required Widget Function(BuildContext, HomeData, Widget) builder,
+  })  : assert(model != null),
+        assert(builder != null),
+        super(
+            key: key,
             child: ValueListenableBuilder(
                 valueListenable: model, builder: builder));
-  bool updateShouldNotify(HomeInheritedWidget oldWidget) {
-    print('test:> $oldWidget');
-    return true;
-  }
+
+  final HomeNotifier model;
 
   static HomeInheritedWidget of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<HomeInheritedWidget>();
   }
+
+  @override
+  bool updateShouldNotify(HomeInheritedWidget old) => true;
 }

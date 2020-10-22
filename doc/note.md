@@ -2,6 +2,11 @@ https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 ## 2020-10-21 09:26:56
 
+- @bug 失败 可能是 HomeInheritedWidget 需要 child child 的 context 才能用 of
+
+  - 是不是系统的问题
+  -
+
 - @todo 将传递 model 的全部删除
 
 - @ques flutter file picker showSavePanel 怎么保存文件
