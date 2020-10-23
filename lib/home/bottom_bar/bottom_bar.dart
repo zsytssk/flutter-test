@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/bottom_bar/button_with_icon.dart';
+import 'package:my_app/home/bottom_bar/button_with_icon.dart';
 import 'package:my_app/components/radio_label.dart';
-import 'package:my_app/components/home_inherited.dart';
+import 'package:my_app/components/inherited_value_listener.dart';
 import 'package:my_app/home/home_model.dart';
 import 'package:my_app/utils/toast.dart';
 
@@ -13,13 +13,8 @@ class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final inheritedWidget =
-        InheritedWidgetOnValueListen.of<HomeData, HomeNotifier>(context);
-
-    if (inheritedWidget == null) {
-      return Text('none');
-    }
+        InheritedWidgetOnValueListener.of<HomeData, HomeNotifier>(context);
     final model = inheritedWidget.model as HomeNotifier;
-    print(model);
     return Row(
       children: [
         Container(

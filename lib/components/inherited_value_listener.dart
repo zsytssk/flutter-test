@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class InheritedWidgetOnValueListen<T, M extends ValueListenable<T>>
+class InheritedWidgetOnValueListener<T, M extends ValueListenable<T>>
     extends InheritedWidget {
-  InheritedWidgetOnValueListen({
+  InheritedWidgetOnValueListener({
     Key key,
     @required this.model,
     @required Widget Function(BuildContext, T, Widget) builder,
@@ -14,12 +14,12 @@ class InheritedWidgetOnValueListen<T, M extends ValueListenable<T>>
 
   final M model;
 
-  static InheritedWidgetOnValueListen of<T, M extends ValueListenable<T>>(
+  static InheritedWidgetOnValueListener of<T, M extends ValueListenable<T>>(
       BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<
-        InheritedWidgetOnValueListen<T, M>>();
+        InheritedWidgetOnValueListener<T, M>>();
   }
 
   @override
-  bool updateShouldNotify(InheritedWidgetOnValueListen old) => true;
+  bool updateShouldNotify(InheritedWidgetOnValueListener old) => true;
 }

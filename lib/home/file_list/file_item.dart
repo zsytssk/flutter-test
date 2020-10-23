@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:my_app/components/on_hover_image.dart';
-import 'package:my_app/components/home_inherited.dart';
+import 'file:///Users/zsy/Documents/zsytssk/github/font_creator/lib/components/inherited_value_listener.dart';
 import 'package:my_app/home/home_model.dart' as Model;
 
 class FileItem extends StatefulWidget {
@@ -19,7 +19,7 @@ class _FileItemState extends State<FileItem> {
   @override
   Widget build(BuildContext context) {
     final model =
-        InheritedWidgetOnValueListen.of<Model.HomeData, Model.HomeNotifier>(
+        InheritedWidgetOnValueListener.of<Model.HomeData, Model.HomeNotifier>(
                 context)
             .model as Model.HomeNotifier;
     return Container(

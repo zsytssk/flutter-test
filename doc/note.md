@@ -2,9 +2,7 @@ https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 ## 2020-10-21 09:26:56
 
-- @ques ValueListenable<T>
-
-  - @ques M =
+- @ques router
 
 - @todo 将传递 model 的全部删除
 
@@ -31,6 +29,10 @@ ValueListener
 
 fit
 InkWell
+
+- @ques ValueListenable<T>
+
+  - @ques M =
 
 ## 2020-10-20 09:38:41
 

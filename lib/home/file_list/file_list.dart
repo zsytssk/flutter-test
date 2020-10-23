@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/file_list/file_item.dart';
+import 'package:my_app/home/file_list/file_item.dart';
 import 'package:my_app/home/home_model.dart' as Model;
 
 class FileList extends StatelessWidget {

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/bottom_bar/bottom_bar.dart';
-import '../file_list/file_list.dart';
+import 'package:my_app/components/inherited_value_listener.dart';
+
+import 'package:my_app/home/bottom_bar/bottom_bar.dart';
+import 'package:my_app/home/file_list/file_list.dart';
 import 'home_model.dart';
-import '../components/home_inherited.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -22,11 +23,9 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor: Colors.white,
-          body: InheritedWidgetOnValueListen(
+          body: InheritedWidgetOnValueListener(
               model: HomeNotifier(HomeData()),
               builder: (BuildContext context, HomeData model, _) {
-                print(InheritedWidgetOnValueListen.of<HomeData, HomeNotifier>(
-                    context));
                 return Container(
                   child: Column(children: [
                     Container(
