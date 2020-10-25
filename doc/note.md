@@ -1,17 +1,21 @@
 https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=22
 
+## 2020-10-23 11:20:55
+
+- @todo global State management
+
+  - https://flutter.dev/docs/development/data-and-backend/state-mgmt
+
+- @todo ReOrderListView
+
 ## 2020-10-21 09:26:56
 
 - @ques router
 
-- @todo 将传递 model 的全部删除
-
 - @ques flutter file picker showSavePanel 怎么保存文件
 - @ques ios open file 权限
 
-inHeritedWidget
-
-ValueListener
+### end
 
 - @ques 换 app 的 icon
 
@@ -19,7 +23,10 @@ ValueListener
 
 - @ques inherited widget | valueListenerBuilder
 
-### end
+inHeritedWidget
+ValueListener
+
+- @todo 将传递 model 的全部删除
 
 - @bug 失败 可能是 HomeInheritedWidget 需要 child child 的 context 才能用 of
   - 是不是系统的问题

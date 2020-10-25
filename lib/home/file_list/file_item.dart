@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:my_app/components/on_hover_image.dart';
-import 'file:///Users/zsy/Documents/zsytssk/github/font_creator/lib/components/inherited_value_listener.dart';
+import 'package:my_app/components/inherited_value_listener.dart';
 import 'package:my_app/home/home_model.dart' as Model;
 
 class FileItem extends StatefulWidget {
@@ -40,6 +40,7 @@ class _FileItemState extends State<FileItem> {
         },
         child: DottedBorder(
           strokeWidth: 1,
+          color: Color(0x33333333),
           customPath: (size) {
             return Path()
               ..moveTo(0, size.height)

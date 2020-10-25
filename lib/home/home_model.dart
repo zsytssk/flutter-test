@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/utils/utils.dart';
-import 'dart:io';
 import 'dart:async';
 import 'package:path/path.dart';
 
 enum FontType { XML, TEXT }
-
-class HomeData {
-  List<FileItem> fileList = [];
-  int fontSize = 20;
-  FontType fontType = FontType.XML;
-  int space = 2;
-}
 
 class HomeNotifier extends ValueNotifier<HomeData> {
   HomeNotifier(HomeData value) : super(value);
@@ -23,7 +15,6 @@ class HomeNotifier extends ValueNotifier<HomeData> {
 
   uploadFile() async {
     final files = await pickOpenFiles();
-    print(files);
     if (files.length > 0) {
       for (final file in files) {
         value.fileList.add(FileItem(path: file));
@@ -62,6 +53,16 @@ class HomeNotifier extends ValueNotifier<HomeData> {
     value.fileList.clear();
     notifyListeners();
   }
+}
+
+class HomeData {
+  List<FileItem> fileList = [];
+  int fontSize = 20;
+  FontType fontType = FontType.XML;
+  int space = 2;
+
+  @override
+  toString() => 'filelist: $fileList, fontSize: $fontSize, fontType: $fontType';
 }
 
 class FileItem {
