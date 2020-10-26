@@ -54,25 +54,30 @@ class _FileItemState extends State<FileItem> {
                   width: 60,
                   height: 60,
                 ),
-                title: Container(
-                  width: 30,
-                  height: 30,
-                  child: TextField(
-                    controller: TextEditingController()
-                      ..text = String.fromCharCode(widget.file.charcode),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
-                    decoration: const InputDecoration(
-                      contentPadding: const EdgeInsets.only(bottom: 13, top: 5),
+                title: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    width: 30,
+                    height: 30,
+                    child: TextField(
+                      controller: TextEditingController()
+                        ..text = String.fromCharCode(widget.file.charcode),
+                      textAlign: TextAlign.center,
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                      decoration: const InputDecoration(
+                        contentPadding:
+                            const EdgeInsets.only(bottom: 13, top: 5),
+                      ),
+                      onChanged: (value) {
+                        widget.file.setChar(value);
+                      },
                     ),
-                    onChanged: (value) {
-                      widget.file.setChar(value);
-                    },
-                  ),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/icon_grid.png"),
-                      fit: BoxFit.cover,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/icon_grid.png"),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),

@@ -1,5 +1,21 @@
 https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=22
 
+## state manager
+
+- [bloc](https://bloclibrary.dev/#/coreconcepts?id=blocs)
+
+- ChangeNotifier - PropertyChangeNotifier； model+event
+
+  - 我自己的模式， 能不能利用 dart 原生的语法代替 event
+
+- https://www.youtube.com/watch?v=4-_aRU0urUc
+
+- bloc -> flutter
+
+- https://www.solutelabs.com/blog/flutter-state-management-everything-you-need-to-know
+
+- @ques flutter-web
+
 ## 2020-10-23 11:20:55
 
 - ListTile | slider
