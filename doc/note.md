@@ -2,6 +2,8 @@ https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 ## 2020-10-23 11:20:55
 
+- ListTile | slider
+
 - @todo global State management
 
   - https://flutter.dev/docs/development/data-and-backend/state-mgmt

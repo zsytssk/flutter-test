@@ -20,6 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double rate = 0;
     final allHeight = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
@@ -33,7 +34,6 @@ class _MyHomePageState extends State<MyHomePage> {
           body: InheritedWidgetOnValueListener(
               model: homeNotifier,
               builder: (BuildContext context, HomeData model, _) {
-                print('test:> $model');
                 return Container(
                   child: Column(children: [
                     Container(
