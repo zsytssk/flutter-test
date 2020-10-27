@@ -2,15 +2,11 @@ https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 ## state manager
 
+- @ques https://bloclibrary.dev/#/gettingstarted
+
 - @todo 问下 接 sdk 需要哪些知识
 
-- @todo select provider 所有的 api
-
-- @todo
-
-- @todo kotlin android demo
-
-  - flutter 如何写 android native 组件
+- @ques Observer
 
 - @ques https://www.youtube.com/watch?v=oxeYeMHVLII&t=143s
 
@@ -33,7 +29,11 @@ https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 - https://www.solutelabs.com/blog/flutter-state-management-everything-you-need-to-know
 
+### end
+
 - @ques flutter-web
+
+- @todo select provider 所有的 api
 
 ## 2020-10-23 11:20:55
 

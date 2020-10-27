@@ -18,6 +18,8 @@ class _FileItemState extends State<FileItem> {
 
   @override
   Widget build(BuildContext context) {
+    final removeFile = context.select((Model.HomeNotifier m) => m.removeFile);
+
     return Container(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
@@ -79,7 +81,7 @@ class _FileItemState extends State<FileItem> {
                 ),
                 trailing: OnHoverImage(
                   onTap: () {
-                    context.read<Model.HomeNotifier>().removeFile(widget.file);
+                    removeFile(widget.file);
                   },
                   width: 35,
                   height: 24,
