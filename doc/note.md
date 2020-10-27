@@ -2,6 +2,10 @@ https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 ## state manager
 
+- @todo 问下 接 sdk 需要哪些知识
+
+- @todo select
+
 - @todo
 
 - @todo kotlin android demo

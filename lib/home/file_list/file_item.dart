@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:my_app/components/on_hover_image.dart';
-import 'package:my_app/components/inherited_value_listener.dart';
+import 'package:provider/provider.dart';
 import 'package:my_app/home/home_model.dart' as Model;
 
 class FileItem extends StatefulWidget {
@@ -18,10 +18,6 @@ class _FileItemState extends State<FileItem> {
 
   @override
   Widget build(BuildContext context) {
-    final model =
-        InheritedWidgetOnValueListener.of<Model.HomeData, Model.HomeNotifier>(
-                context)
-            .model as Model.HomeNotifier;
     return Container(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
@@ -83,7 +79,7 @@ class _FileItemState extends State<FileItem> {
                 ),
                 trailing: OnHoverImage(
                   onTap: () {
-                    model.removeFile(widget.file);
+                    context.read<Model.HomeNotifier>().removeFile(widget.file);
                   },
                   width: 35,
                   height: 24,

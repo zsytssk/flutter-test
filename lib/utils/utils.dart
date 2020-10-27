@@ -15,26 +15,26 @@ import 'package:my_app/utils/genXml.dart';
 import '../home/home_model.dart';
 
 pickOpenFiles() {
-  // if (Platform.isMacOS || Platform.isWindows) {
-  //   return showOpenPanel(
-  //     allowsMultipleSelection: true,
-  //     allowedFileTypes: [
-  //       FileTypeFilterGroup(label: 'image', fileExtensions: ['png', 'jpg']),
-  //     ],
-  //   ).then((val) {
-  //     return val.paths;
-  //   });
-  // }
+  if (Platform.isMacOS || Platform.isWindows) {
+    return showOpenPanel(
+      allowsMultipleSelection: true,
+      allowedFileTypes: [
+        FileTypeFilterGroup(label: 'image', fileExtensions: ['png', 'jpg']),
+      ],
+    ).then((val) {
+      return val.paths;
+    });
+  }
 
-  final result = FilePicker.platform.pickFiles(
-    type: FileType.custom,
-    allowMultiple: true,
-    allowedExtensions: ['jpg', 'png'],
-  ).then((result) {
-    return result.files.map((e) => e.path).toList();
-  });
+  // final result = FilePicker.platform.pickFiles(
+  //   type: FileType.custom,
+  //   allowMultiple: true,
+  //   allowedExtensions: ['jpg', 'png'],
+  // ).then((result) {
+  //   return result.files.map((e) => e.path).toList();
+  // });
 
-  return result;
+  // return result;
 }
 
 Future<List<String>> pickSaveFile(String fileType, {String filename}) {

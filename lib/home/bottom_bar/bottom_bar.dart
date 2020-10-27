@@ -4,6 +4,7 @@ import 'package:my_app/components/radio_label.dart';
 import 'package:my_app/components/inherited_value_listener.dart';
 import 'package:my_app/home/home_model.dart';
 import 'package:my_app/utils/toast.dart';
+import 'package:provider/provider.dart';
 
 const textStyle = TextStyle(fontSize: 12);
 
@@ -12,9 +13,7 @@ class BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final inheritedWidget =
-        InheritedWidgetOnValueListener.of<HomeData, HomeNotifier>(context);
-    final model = inheritedWidget.model as HomeNotifier;
+    final model = context.watch<HomeNotifier>();
     return Row(
       children: [
         Container(
@@ -95,7 +94,10 @@ class BottomBar extends StatelessWidget {
                         ),
                         InkWell(
                             onTap: () {
-                              model.clear();
+                              Navigator.of(context).pushNamed(
+                                "/preview",
+                              );
+                              // model.clear();
                             },
                             child: Text('删除全部'))
                       ]),
