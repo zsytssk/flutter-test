@@ -2,7 +2,7 @@ https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 ## state manager
 
-- @ques https://bloclibrary.dev/#/gettingstarted
+- @ques bloc https://bloclibrary.dev/#/gettingstarted
 
 - @todo 问下 接 sdk 需要哪些知识
 
