@@ -2,6 +2,21 @@ https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6
 
 ## state manager
 
+- @todo
+
+- @todo kotlin android demo
+
+  - flutter 如何写 android native 组件
+
+- @ques https://www.youtube.com/watch?v=oxeYeMHVLII&t=143s
+
+- @ques stream-builder
+
+  - https://www.youtube.com/watch?v=PT3v28eyOqg
+  - provider 提供整个对象 + streamBuilder 监听某一个的变化 -> streamBuilder 就像 useSelector 一样
+  - 可以把 streamBuilder 改成一个对一个对象的监听...
+  - 将一个 event 变成一个 stream
+
 - [bloc](https://bloclibrary.dev/#/coreconcepts?id=blocs)
 
 - ChangeNotifier - PropertyChangeNotifier； model+event
