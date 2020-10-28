@@ -1,6 +1,14 @@
 https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=22
 
+## 2020-10-28 09:31:16
+
+- Duartion 里面到底是什么方法
+
+- @ques GetX 如果 我有一个对象多个实例 我怎么处理 不太好处理吧
+
 ## state manager
+
+-
 
 - @ques bloc https://bloclibrary.dev/#/gettingstarted
 
