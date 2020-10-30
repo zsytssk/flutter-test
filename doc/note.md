@@ -1,6 +1,15 @@
-https://www.youtube.com/watch?v=WghpP9W2vXo&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=22
+https://www.youtube.com/watch?v=pDzQGolJayE&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=24
 
 ## 2020-10-28 09:31:16
+
+context 是解决我以前的问题 在所有关系树中 下级怎么知道父级
+
+changeNotifierProxyProvider
+provider 的所有 api
+streamProvider
+FutureBuilder
+
+- event to stream
 
 - Duartion 里面到底是什么方法
 
