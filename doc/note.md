@@ -1,5 +1,24 @@
 https://www.youtube.com/watch?v=pDzQGolJayE&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=24
 
+## 2020-10-30 09:30:54
+
+```dart
+Future.microtask(() =>
+    context.read<MyNotifier>(context).fetchSomething(someValue);
+  );
+
+  Provider.value
+
+Foo(
+  child: Consumer<A>(
+    builder: (_, a, child) {
+      return Bar(a: a, child: child);
+    },
+    child: Baz(),
+  ),
+)
+```
+
 ## 2020-10-28 09:31:16
 
 context 是解决我以前的问题 在所有关系树中 下级怎么知道父级

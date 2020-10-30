@@ -15,6 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
   initState() {
     super.initState();
     homeNotifier = HomeNotifier(HomeData());
+    print(context.read<HomeNotifier>());
   }
 
   @override
