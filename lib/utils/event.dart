@@ -1,4 +1,4 @@
-typedef Fun = void Function(dynamic data);
+typedef Fun = void Function([dynamic data]);
 
 class EventItem {
   dynamic caller;
@@ -8,21 +8,16 @@ class EventItem {
 
   EventItem({this.caller, this.off, this.callback, this.once});
 }
-/** 每一个event的数据 */
 
-/**
- * 事件订阅发布构造函数
- */
+/// 事件订阅发布构造函数
 class Event {
   Map<String, Set<EventItem>> events = Map();
 
-  /**
-     * 注册监听
-     * @param event
-     * @param callback
-     * @param caller
-     */
-  on(String event, Fun callback, {dynamic caller, bool once = false}) {
+  /// 注册监听
+  /// [event] 是事件名称
+  /// [callback] 监听函数
+  /// [caller] 是 绑定对象
+  on(String event, Fun callback, [dynamic caller, bool once = false]) {
     Set<EventItem> events;
     if (this.events.containsKey(event)) {
       events = this.events[event];
@@ -37,7 +32,7 @@ class Event {
       }
     }
     final off = () {
-      this.off(event, callback: callback, caller: caller);
+      this.off(event, callback, caller);
     };
 
     events.add(
@@ -45,20 +40,18 @@ class Event {
   }
 
   once(String event, {Fun callback, dynamic caller}) {
-    return this.on(event, callback, caller: caller, once: true);
+    return this.on(event, callback, caller, true);
   }
 
   getBind(String event) {
     return this.events[event];
   }
 
-  /**
-     * 取消监听，如果没有传 callback 或 caller，那么就删除所对应的所有监听
-     * @param event
-     * @param callback
-     * @param caller
-     */
-  off(String event, {Fun callback, dynamic caller}) {
+  /// 取消监听，如果没有传 callback 或 caller，那么就删除所对应的所有监听
+  /// @event 事件名称
+  /// @callback
+  /// @caller
+  off(String event, [Fun callback, dynamic caller]) {
     if (!this.events.containsKey(event)) {
       return;
     }
@@ -81,12 +74,10 @@ class Event {
     }
   }
 
-  /**
-     * 发布消息
-     * @param event
-     * @param data
-     */
-  emit(String event, {dynamic data}) {
+  /// 发布消息
+  /// @event
+  /// @data
+  emit(String event, [dynamic data]) {
     if (this.events.containsKey(event)) {
       final events = this.events[event];
       for (final item in [...events]) {

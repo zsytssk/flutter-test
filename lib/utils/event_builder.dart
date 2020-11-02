@@ -26,12 +26,12 @@ class _EventBuilderState<T extends Event> extends State<EventBuilder<T>> {
   @override
   void dispose() {
     for (final event in widget.events) {
-      widget.model.off(event, callback: _valueChanged);
+      widget.model.off(event, _valueChanged);
     }
     super.dispose();
   }
 
-  void _valueChanged(_) {
+  void _valueChanged([_]) {
     setState(() {
       value += 1;
     });
