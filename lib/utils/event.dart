@@ -1,8 +1,8 @@
-typedef Fun<T extends Object> = T Function(dynamic data);
+typedef Fun = void Function(dynamic data);
 
 class EventItem {
   dynamic caller;
-  Fun<dynamic> callback;
+  Fun callback;
   bool once;
   void Function() off;
 
@@ -22,7 +22,7 @@ class Event {
      * @param callback
      * @param caller
      */
-  on(String event, Fun<dynamic> callback, {dynamic caller, bool once = false}) {
+  on(String event, Fun callback, {dynamic caller, bool once = false}) {
     Set<EventItem> events;
     if (this.events.containsKey(event)) {
       events = this.events[event];
@@ -44,7 +44,7 @@ class Event {
         EventItem(caller: caller, callback: callback, once: once, off: off));
   }
 
-  once(String event, {Fun<dynamic> callback, dynamic caller}) {
+  once(String event, {Fun callback, dynamic caller}) {
     return this.on(event, callback, caller: caller, once: true);
   }
 
@@ -58,7 +58,7 @@ class Event {
      * @param callback
      * @param caller
      */
-  off(String event, {Fun<dynamic> callback, dynamic caller}) {
+  off(String event, {Fun callback, dynamic caller}) {
     if (!this.events.containsKey(event)) {
       return;
     }
@@ -86,7 +86,7 @@ class Event {
      * @param event
      * @param data
      */
-  emit(String event, dynamic data) {
+  emit(String event, {dynamic data}) {
     if (this.events.containsKey(event)) {
       final events = this.events[event];
       for (final item in [...events]) {
@@ -97,7 +97,7 @@ class Event {
           continue;
         }
 
-        if (item.callback is Fun<dynamic>) {
+        if (item.callback is Fun) {
           item.callback(data);
         }
         if (item.once) {

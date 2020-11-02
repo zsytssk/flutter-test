@@ -1,4 +1,4 @@
-typedef Fun<T extends Object> = T Function(dynamic data);
+typedef Fun<T extends Object> = T Function({dynamic data});
 
 class EventItem {
   dynamic caller;
@@ -96,7 +96,7 @@ class Event {
         }
 
         if (item.callback is Fun<dynamic>) {
-          item.callback(data);
+          item.callback(data: data);
         }
         if (item.once) {
           item.off();
