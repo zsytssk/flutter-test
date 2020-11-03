@@ -1,6 +1,12 @@
 https://www.youtube.com/watch?v=pDzQGolJayE&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=24
 
+## 2020-11-03 09:46:22
+
+- @ques 怎么切换 route
+
 ## 2020-10-30 09:30:54
+
+- @ques 怎么把 event 转化成 observer
 
 ```dart
 Future.microtask(() =>
