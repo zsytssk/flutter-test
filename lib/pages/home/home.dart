@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
+import 'package:intl/intl.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -7,10 +8,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  String time;
   getTime() async {
     Response response =
         await get('http://worldtimeapi.org/api/timezone/Europe');
-    print(response.body);
+
+    setState(() {
+      time = DateFormat.jm().format(DateTime.now());
+    });
   }
 
   @override
@@ -21,6 +26,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Text('hello world1', style: TextStyle(color: Colors.white));
+    return Text('hello world $time', style: TextStyle(color: Colors.white));
   }
 }

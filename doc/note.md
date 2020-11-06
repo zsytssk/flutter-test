@@ -1,8 +1,18 @@
 https://www.youtube.com/watch?v=pDzQGolJayE&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=24
 
+https://flutter.dev/docs/get-started/install
+
+https://medium.com/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
+
 ## 2020-11-03 09:46:22
 
+- @ques Riverpod 怎么改变
+
 - @ques 怎么切换 route
+
+- @ques 怎么设置 loading page
+
+BottomBar
 
 ## 2020-10-30 09:30:54
 

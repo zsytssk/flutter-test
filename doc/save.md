@@ -2,6 +2,14 @@
   - flutter + kotlin + swift + react
   - 能不能把 react 代码编译成 flutter
 
+## 学习流程
+
+dart
+this week of widget
+https://www.youtube.com/playlist?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ
+
+stateManger -> Provider GetX...
+
 ## 2020-10-27 13:39:40
 
 - @todo 彩云 app flutter
